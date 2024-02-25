@@ -1,1 +1,42 @@
-<p>register-component works!</p>
+<mat-card class="content-card">
+    <mat-card-header>
+        <mat-card-title class="card-title">Belot Register</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">It's belotin' time</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="card-text">
+        <form [formGroup]="form">
+            <mat-form-field class="loginInput">
+                <mat-label>Name/Username</mat-label>
+                <input formControlName="username" [(ngModel)]="username" (ngModelChange)="checkUsernameAvailability($event)" matInput>
+                <div *ngIf="isUsernameTaken" style="color: red;">Username is already taken.</div>
+            </mat-form-field>
+            <mat-form-field class="loginInput">
+                <mat-label>Password</mat-label>
+                <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password" matInput type="password">
+                <button mat-icon-button matSuffix [attr.aria-label]="'Hide password'" [attr.aria-pressed]="showPassword" (click)="togglePasswordVisibility()">
+                    
+                    <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+                  </button>
+            </mat-form-field>
+            <mat-form-field class="loginInput">
+                <mat-label>Confirm Password</mat-label>
+                <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="confirmPassword" matInput type="password" [(ngModel)]="confirmPass" (ngModelChange)="confirmPasswordMatch($event)">
+                <button mat-icon-button matSuffix [attr.aria-label]="'Hide password'" [attr.aria-pressed]="showPassword" (click)="togglePasswordVisibility()">
+                    <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+                  </button>
+                  <div *ngIf="!isPasswordMatch" style="color: red;">Passwords do not match.</div>
+            </mat-form-field>
+        </form>
+
+        
+        <div *ngFor="let control of formControls">
+            <div *ngIf="!control.control.valid && control.control.dirty" style="color: red;">
+              {{ control.name }} is not valid: {{ getValidationMessage(control) }}
+            </div>
+          </div>
+
+        <section class="form-buttons">
+            <button mat-raised-button color="primary" (click)="register()" [disabled]="!form.valid && !isUsernameTaken">Register</button>
+        </section>
+    </mat-card-content>
+</mat-card>

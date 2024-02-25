@@ -1,0 +1,58 @@
+.content-card{
+    min-width: 35vw;
+    width: min-content;
+    height: min-content;
+    margin: 0 auto;
+    margin-top: 10rem;
+    display: flex;
+}
+
+.card-title{
+    margin: 0.5rem;
+    color: #3f51b5;
+}
+
+.card-subtitle{
+    margin: 0.5rem;
+}
+
+.card-text{
+    margin: 0.5rem;
+}
+
+.card-text p{
+    opacity: 0.5;
+    font-weight: 500;
+    margin-top: -0.8rem;
+}
+
+.form-buttons{
+    margin-top: 0.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-buttons button{
+    min-width: 8rem;
+}
+
+.loginInput{
+    width: 100%;
+    float: left;
+}
+
+.textButton{
+    margin: 0.5rem;
+    margin-left: -0.4rem;
+}
+
+@media only screen and (max-width: 1200px){
+    .form-buttons button{
+        min-width: 6rem;
+    }
+    .content-card{
+        margin-top: 5rem;
+        min-width: 80vw;
+    }
+}
