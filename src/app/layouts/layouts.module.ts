@@ -12,7 +12,6 @@ const components = [DefaultComponent];
     ComponentsModule,
     AppRoutingModule,
     BrowserModule,
-    // PagesRoutingModule
   ],
   exports: [...components],
   providers: [],
