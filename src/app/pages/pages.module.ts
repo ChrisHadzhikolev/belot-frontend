@@ -28,6 +28,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LoginComponentComponent } from './login-component/login-component.component';
+import { RegisterComponentComponent } from './register-component/register-component.component';
+import { SecretCodeComponentComponent } from './register-component/secret-code-component/secret-code-component.component';
 
 const components = [
   DashboardComponent,
@@ -71,6 +74,9 @@ const material = [
 @NgModule({
   declarations: [
     ...components,
+    LoginComponentComponent,
+    RegisterComponentComponent,
+    SecretCodeComponentComponent,
   ],
   imports: [
     ...material,
