@@ -1,0 +1,28 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+
+        <section class="navGroup">
+            <label class="navGroupLabel">Navigation</label>
+            <a class="navButton" mat-button color="primary" href="/">
+                <mat-icon>home</mat-icon>
+                <label>Dashboard</label>
+            </a>
+        </section>
+
+        <!-- <section class="navGroup">
+            <label class="navGroupLabel">Some Nav</label>
+            <a class="navButton" mat-button color="primary" href="/some">
+                <mat-icon>group</mat-icon>
+                <label>Some nav2</label>
+            </a>
+            <a class="navButton" mat-button color="primary" href="/some1">
+                <mat-icon>directions_car</mat-icon>
+                <label>some1page</label>
+            </a>
+        </section> -->
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

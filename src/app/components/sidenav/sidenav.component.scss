@@ -1,0 +1,38 @@
+mat-sidenav-container{
+    height: 93vh;
+}
+
+mat-sidenav{
+    width: 12%;
+    min-width: 220px;
+}
+
+.navGroup{
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.navGroupLabel{
+    float: left;
+    margin-left: 1.2rem;
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+.navButton{
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+
+.navButton mat-icon{
+    margin-left: 0.6rem;
+}
+
+.menuDivider{
+    width: 80%;
+    margin: auto;
+    margin-top: 0.6rem;
+}
+
+
