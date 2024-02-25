@@ -1,1 +1,28 @@
-<p>login-component works!</p>
+<mat-card class="content-card">
+    <mat-card-header>
+        <mat-card-title class="card-title">Belot Login</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">It's belotin' time</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="card-text">
+        <form [formGroup]="form">
+            <mat-form-field class="loginInput">
+                <mat-label>Name/Username</mat-label>
+                <input formControlName="username" matInput>
+            </mat-form-field>
+            <mat-form-field class="loginInput">
+                <mat-label>Password</mat-label>
+                <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password" matInput type="password">
+                <button mat-icon-button matSuffix [attr.aria-label]="'Hide password'" [attr.aria-pressed]="showPassword" (click)="togglePasswordVisibility()">
+                    
+                    <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+                  </button>
+            </mat-form-field>
+        </form>
+
+        <section class="form-buttons">
+            <button mat-raised-button color="primary" (click)="login()">Log in</button>
+            <button mat-raised-button color="primary" (click)="register()">Register</button>
+        </section>
+        <button class="textButton" mat-button color="warn">Forgotten Password?</button>
+    </mat-card-content>
+</mat-card>
