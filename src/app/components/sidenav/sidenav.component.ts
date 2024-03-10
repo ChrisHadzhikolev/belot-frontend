@@ -9,6 +9,10 @@ import { SideNavService } from 'src/app/services/sidenav/sidenav-service';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit{
+logout() {
+localStorage.setItem("token", "");
+this.router.navigate(['login'])
+}
   @ViewChild('sidenav')
   public sidenav!: MatSidenav;
 
