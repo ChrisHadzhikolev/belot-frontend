@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.post(
         url,
       {
-        username,
-        password,
+        name: username,
+        password: password,
       },
     );
   }

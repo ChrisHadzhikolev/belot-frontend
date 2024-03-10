@@ -28,7 +28,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
   constructor(
-    // private authService: AuthService,
+    private authService: AuthService,
     private usersService: UsersService,
     private router: Router,
     private toastService: ToastService,
@@ -69,28 +69,28 @@ export class LoginComponentComponent implements OnInit {
   }
 
   async login() {
-    // const { username, password } = this.form.value;
-    // this.authService.login(username, password).subscribe({
-    //   next: (data) => {
-    //     localStorage.setItem("token", data);
-    //     this.isLoginFailed = false;
-    //     this.isLoggedIn = true;
-    //   },
-    //   error: (e) => {
-    //     if (e.error.message.includes('incorrect')) {
-    //       this.toastService.showErrorToast('Error', 'Wrong credentials');
-    //     } else {
-    //       this.toastService.showErrorToast(
-    //         'Error',
-    //         'Something went wrong',
-    //       );
-    //       console.error(e);
-    //     }
-    //     this.isLoginFailed = true;
-    //   },
-    //   complete: () => {
-    //     this.router.navigate(['/dashboard']);
-    //   },
-    // });
+    const { username, password } = this.form.value;
+    this.authService.login(username, password).subscribe({
+      next: (data) => {
+        localStorage.setItem("token", data.data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+      },
+      error: (e) => {
+        if (e.error.message.includes('incorrect')) {
+          this.toastService.showErrorToast('Error', 'Wrong credentials');
+        } else {
+          this.toastService.showErrorToast(
+            'Error',
+            'Something went wrong',
+          );
+          console.error(e);
+        }
+        this.isLoginFailed = true;
+      },
+      complete: () => {
+        this.router.navigate(['/dashboard']);
+      },
+    });
   }
 }
