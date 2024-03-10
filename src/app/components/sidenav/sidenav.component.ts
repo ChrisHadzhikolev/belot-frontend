@@ -25,21 +25,7 @@ this.router.navigate(['login'])
 
   ngOnInit() {
     this.sideNavService.sideNavToggleSubject.subscribe(() => {
-      this.sidenav.toggle(true);
+      if (localStorage.getItem("token") && localStorage.getItem("token") !== "") this.sidenav.toggle(true);
     });
   }
-
-  // logout() {
-  //   this.authService.logout().subscribe({
-  //     next: (res) => {
-  //       window.location.reload();
-  //     },
-  //     error: (err) => {
-  //       console.log(err);
-  //     },
-  //     complete: () => {
-  //       this.router.navigate(['/login']);
-  //     }
-  //   });
-// }
 }
