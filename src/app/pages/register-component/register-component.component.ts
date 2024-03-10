@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { ToastService } from 'src/app/services/toastr/toastr.service';
 import { UsersService } from 'src/app/services/users/users.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-register-component',
@@ -19,6 +20,7 @@ constructor(
   private usersService: UsersService,
   private router: Router,
   private toastService: ToastService,
+  private authService: AuthService,
   formBuilder: FormBuilder
   ){
     titleService.setTitle("Belot Register");
@@ -106,6 +108,10 @@ constructor(
 
   register(){
     if (this.form.invalid){}
+
+    this.authService.register(this.form.value.username, this.form.value.password).subscribe(res=>{
+      this.router.navigate(['login'])
+    });
   }
 
   getValidationMessage(control: any) {

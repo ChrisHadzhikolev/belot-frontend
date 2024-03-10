@@ -24,13 +24,13 @@ export class AuthService {
     );
   }
 
-  register(username: string, email: string, password: string): Observable<any> {
+  register(username: string, password: string): Observable<any> {
     const url = this.baseService.getBackendApiUrl() + 'users/signup';
     return this.http.post(
       url,
       {
-        username,
-        password,
+        name: username,
+        password: password,
       },
       httpOptions,
     );
