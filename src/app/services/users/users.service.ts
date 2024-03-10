@@ -11,6 +11,13 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class UsersService {
+  getCurrentUser() {
+    const url = this.baseService.getBackendApiUrl() + 'users/current';
+    return this.http.get(
+        url,
+        {headers: this.baseService.getHeaders(true)}
+    );
+  }
   constructor(private baseService: BaseApiService, private http: HttpClient) {}
 
   verifyCode(secretCode: string): Observable<any> {

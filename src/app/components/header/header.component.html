@@ -1,8 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="display: flex; align-items: center;">
     <button (click)="toggleSidenav()" mat-icon-button class="example-icon">
       <mat-icon>menu</mat-icon>
     </button>
     <a href="/dashboard">
-        <img src="assets/images/navLogo.jpeg" width="20px" height="25px" />
+      <img src="assets/images/navLogo.jpeg" width="20px" height="25px" />
     </a>
-  </mat-toolbar>
+  </div>
+  <p style="margin-right: 8px; text-align: center;">{{ name }}</p>
+</mat-toolbar>
