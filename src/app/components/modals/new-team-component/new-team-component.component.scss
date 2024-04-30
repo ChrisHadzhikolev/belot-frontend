@@ -1,21 +1,45 @@
-.dialog-body{
-    width: 30vw;
-}
-
-.button-group{
+/* Centering the dialog title */
+.mat-dialog-title {
+    text-align: center;
+  }
+  
+  /* Responsive styling for the dialog content */
+  .mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for the form field */
+  .input-field {
     width: 100%;
-}
-
-.button-group button{
-    width: 100%;
-    margin: 1em;
-    margin-top: 0rem;
-}
-
-.input-field{
-    width: 100%;
-}
-
-.input-field input{
-    width: 100%;
-}
+  }
+  
+  /* Styling for the error message */
+  .error-message {
+    color: red;
+  }
+  
+  /* Styling for the button group */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Styling for buttons */
+  button {
+    margin: 0 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media only screen and (max-width: 600px) {
+    .mat-dialog-content {
+      padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+    
+    .button-group {
+      flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+  }
+  
