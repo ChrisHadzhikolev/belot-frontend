@@ -27,12 +27,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ToastComponent } from './toast/toast.component';
 import { ToasterComponent } from './toaster/toaster.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { NewTeamComponent } from './modals/new-team-component/new-team-component.component';
 
 const components = [
   HeaderComponent,
   ToastComponent,
   ToasterComponent,
-  SidenavComponent
+  SidenavComponent,
+  NewTeamComponent
 ];
 
 const material = [

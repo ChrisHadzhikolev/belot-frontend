@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Auto toevoegen</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formGroupTeam">
+        <mat-form-field class="input-field">
+            <input matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Player 1</mat-label>
+            <mat-select formControlName="player1">
+                    <mat-option *ngFor="let player of data.players" [value]="player">{{player.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Player 2</mat-label>
+            <mat-select formControlName="player2">
+                    <mat-option *ngFor="let player of data.players" [value]="player">{{player.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+<br><br>
+<p style="color: red;" *ngIf="hasErrors">{{error}}</p>
+
+        <div mat-dialog-actions class="button-group">
+            <button mat-raised-button color="primary" (click)="addTeam()">Create Team</button>
+            <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
